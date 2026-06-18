@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Green Habit Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- LOGIN -->
+  <div id="loginView" class="panel" style="display:none">
+    <div id="loginCard">
+      <h1>Green Habit Tracker</h1>
+
+      <p>
+        Track your daily eco-friendly habits, reduce your carbon footprint,
+        and contribute to a sustainable future.
+      </p>
+
+      <input id="nameInput" placeholder="Your name (e.g., Aisha)">
+
+      <div style="margin-top:12px">
+        <button class="btn" id="loginBtn">Start Tracking</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div id="appView" style="display:none">
+
+    <div id="appTop">
+      <div class="title">
+        <h2 id="greeting">Welcome</h2>
+        <p id="subline">Make green habits part of your routine</p>
+      </div>
+
+      <div class="controls">
+        <button class="btn secondary" id="logoutBtn">Logout</button>
+        <button class="btn" id="clearAllBtn">Clear Data</button>
+      </div>
+    </div>
+
+    <!-- Progress -->
+    <div class="progressWrap panel">
+      <div class="progressHead">
+
+        <div>
+          <strong id="pointsText">Points: 0</strong>
+          <div style="font-size:13px;color:var(--muted)">
+            Weekly goal:
+            <span id="goalText">100</span> pts
+          </div>
+        </div>
+
+        <div style="text-align:right">
+          <div style="font-size:14px;color:var(--muted)">
+            Total CO₂ Saved
+          </div>
+          <div style="font-weight:700" id="co2Text">
+            0.00 kg
+          </div>
+        </div>
+
+      </div>
+
+      <div class="progressBarOuter">
+        <div class="progressBarInner" id="progressInner"></div>
+      </div>
+
+      <div class="badges" id="badgesArea"></div>
+    </div>
+
+    <div class="mainGrid">
+
+      <!-- LEFT SIDE -->
+      <div class="panel">
+
+        <h3 style="margin-top:0">Choose a habit (tap to add)</h3>
+
+        <div class="habitGrid" id="habitGrid"></div>
+
+        <div style="margin-top:12px;border-top:1px dashed rgba(0,0,0,.04);padding-top:12px">
+
+          <div style="display:flex;gap:8px;align-items:center">
+
+            <input id="customName"
+              placeholder="Add custom habit (e.g. Walk to market)">
+
+            <input id="customPoints"
+              type="number"
+              placeholder="pts"
+              style="width:80px">
+
+            <input id="customCo2"
+              type="number"
+              placeholder="kg CO₂"
+              style="width:110px"
+              step="0.01">
+
+            <button class="btn" id="addCustomBtn">Add</button>
+
+          </div>
+
+          <div style="margin-top:8px;font-size:13px;color:var(--muted)">
+            Tip: custom habits are saved locally for future use.
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div>
+
+        <div class="panel">
+
+          <div class="statRow">
+
+            <div class="statBox">
+              <h3 id="statPoints">0</h3>
+              <p>Points</p>
+            </div>
+
+            <div class="statBox">
+              <h3 id="statCo2">0.00 kg</h3>
+              <p>CO₂ Saved</p>
+            </div>
+
+          </div>
+
+          <h4 style="margin:10px 0 8px">
+            Recent Activity
+          </h4>
+
+          <div class="logsList" id="logsList"></div>
+
+        </div>
+
+        <div class="panel" style="margin-top:12px">
+
+          <h4 style="margin:0 0 8px">Badges</h4>
+
+          <p style="margin:0 0 10px;color:var(--muted)">
+            Earn badges when you reach point milestones.
+          </p>
+
+          <div id="allBadges" class="badges"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer>
+      🌱 Developed by Sattarbi |
+      1M1B Green Internship Project |
+      Promoting Sustainable Living ♻️
+    </footer>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
